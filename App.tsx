@@ -5,7 +5,7 @@ import { ThemeContext } from "./src/context/ThemeContext";
 import KalkulatorSaya from "./src/components/KalkulatorSaya";
 
 export default function App() {
-  const [tema, Tema] = useState("light");
+  const [tema, setTema] = useState("light");
   return (
     <ThemeContext.Provider value={tema}>
       <SafeAreaView
@@ -17,7 +17,7 @@ export default function App() {
       >
         <Switch
           value={tema === "dark"}
-          onValueChange={() => Tema(tema === "light" ? "dark" : "light")}
+          onValueChange={() => setTema(tema === "light" ? "dark" : "light")}
         />
         <KalkulatorSaya />
       </SafeAreaView>
@@ -31,5 +31,6 @@ const styles = StyleSheet.create({
     backgroundColor: WarnaSaya.light,
     alignItems: "center",
     justifyContent: "flex-start",
+    paddingTop: 30,
   },
 });
