@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { myColors } from "./Colors";
+import { WarnaSaya } from "./Warna";
 
 export const Styles = StyleSheet.create({
   // Button
@@ -7,7 +7,7 @@ export const Styles = StyleSheet.create({
     width: 72,
     height: 72,
     borderRadius: 24,
-    backgroundColor: myColors.blue,
+    backgroundColor: WarnaSaya.biru,
     justifyContent: "center",
     alignItems: "center",
     margin: 8,
@@ -16,7 +16,7 @@ export const Styles = StyleSheet.create({
     width: 72,
     height: 72,
     borderRadius: 24,
-    backgroundColor: myColors.btnDark,
+    backgroundColor: WarnaSaya.btnDark,
     justifyContent: "center",
     alignItems: "center",
     margin: 8,
@@ -25,7 +25,7 @@ export const Styles = StyleSheet.create({
     width: 72,
     height: 72,
     borderRadius: 24,
-    backgroundColor: myColors.white,
+    backgroundColor: WarnaSaya.putih,
     justifyContent: "center",
     alignItems: "center",
     margin: 8,
@@ -34,18 +34,18 @@ export const Styles = StyleSheet.create({
     width: 72,
     height: 72,
     borderRadius: 24,
-    backgroundColor: myColors.btnGray,
+    backgroundColor: WarnaSaya.btnGray,
     justifyContent: "center",
     alignItems: "center",
     margin: 8,
   },
   smallTextLight: {
     fontSize: 32,
-    color: myColors.white,
+    color: WarnaSaya.putih,
   },
   smallTextDark: {
     fontSize: 32,
-    color: myColors.black,
+    color: WarnaSaya.hitam,
   },
   // Keyboard
   row: {
@@ -58,13 +58,13 @@ export const Styles = StyleSheet.create({
   },
   screenFirstNumber: {
     fontSize: 96,
-    color: myColors.gray,
+    color: WarnaSaya.abu,
     fontWeight: "200",
     alignSelf: "flex-end",
   },
   screenSecondNumber: {
     fontSize: 40,
-    color: myColors.gray,
+    color: WarnaSaya.abu,
     fontWeight: "200",
     alignSelf: "flex-end",
   },

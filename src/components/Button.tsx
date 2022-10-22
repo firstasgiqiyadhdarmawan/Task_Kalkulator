@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { TouchableOpacity, Text } from "react-native";
 import { ThemeContext } from "../context/ThemeContext";
-import { Styles } from "../styles/GlobalStyles";
+import { Styles } from "../styles/StylesGlobal";
 
-interface ButtonProps {
+interface PropsTombol {
   onPress: () => void;
   title: string;
   isBlue?: boolean;
@@ -15,7 +15,7 @@ export default function Button({
   onPress,
   isBlue,
   isGray,
-}: ButtonProps) {
+}: PropsTombol) {
   const theme = useContext(ThemeContext);
   return (
     <TouchableOpacity

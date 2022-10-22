@@ -1,32 +1,32 @@
 import * as React from "react";
 import Button from "./Button";
 import { View, Text } from "react-native";
-import { Styles } from "../styles/GlobalStyles";
-import { myColors } from "../styles/Colors";
+import { Styles } from "../styles/StylesGlobal";
+import { WarnaSaya } from "../styles/Warna";
 
-export default function MyKeyboard() {
-  const [firstNumber, setFirstNumber] = React.useState("");
-  const [secondNumber, setSecondNumber] = React.useState("");
-  const [operation, setOperation] = React.useState("");
-  const [result, setResult] = React.useState<Number | null>(null);
+export default function KalkulatorSaya() {
+  const [firstNumber, setAngkaPertama] = React.useState("");
+  const [secondNumber, setAngkaKedua] = React.useState("");
+  const [operation, setOperasi] = React.useState("");
+  const [result, setHasil] = React.useState<Number | null>(null);
 
   const handleNumberPress = (buttonValue: string) => {
     if (firstNumber.length < 10) {
-      setFirstNumber(firstNumber + buttonValue);
+      setAngkaPertama(firstNumber + buttonValue);
     }
   };
 
   const handleOperationPress = (buttonValue: string) => {
-    setOperation(buttonValue);
-    setSecondNumber(firstNumber);
-    setFirstNumber("");
+    setOperasi(buttonValue);
+    setAngkaKedua(firstNumber);
+    setAngkaPertama("");
   };
 
   const clear = () => {
-    setFirstNumber("");
-    setSecondNumber("");
-    setOperation("");
-    setResult(null);
+    setAngkaPertama("");
+    setAngkaKedua("");
+    setOperasi("");
+    setHasil(null);
   };
 
   const firstNumberDisplay = () => {
@@ -35,10 +35,10 @@ export default function MyKeyboard() {
         <Text
           style={
             result < 99999
-              ? [Styles.screenFirstNumber, { color: myColors.result }]
+              ? [Styles.screenFirstNumber, { color: WarnaSaya.result }]
               : [
                   Styles.screenFirstNumber,
-                  { fontSize: 50, color: myColors.result },
+                  { fontSize: 50, color: WarnaSaya.result },
                 ]
           }
         >
@@ -68,27 +68,27 @@ export default function MyKeyboard() {
     }
   };
 
-  const getResult = () => {
+  const getHasil = () => {
     switch (operation) {
       case "+":
         clear();
-        setResult(parseInt(secondNumber) + parseInt(firstNumber));
+        setHasil(parseInt(secondNumber) + parseInt(firstNumber));
         break;
       case "-":
         clear();
-        setResult(parseInt(secondNumber) - parseInt(firstNumber));
+        setHasil(parseInt(secondNumber) - parseInt(firstNumber));
         break;
       case "*":
         clear();
-        setResult(parseInt(secondNumber) * parseInt(firstNumber));
+        setHasil(parseInt(secondNumber) * parseInt(firstNumber));
         break;
       case "/":
         clear();
-        setResult(parseInt(secondNumber) / parseInt(firstNumber));
+        setHasil(parseInt(secondNumber) / parseInt(firstNumber));
         break;
       default:
         clear();
-        setResult(0);
+        setHasil(0);
         break;
     }
   };
@@ -144,9 +144,9 @@ export default function MyKeyboard() {
         <Button title="0" onPress={() => handleNumberPress("0")} />
         <Button
           title="⌫"
-          onPress={() => setFirstNumber(firstNumber.slice(0, -1))}
+          onPress={() => setAngkaPertama(firstNumber.slice(0, -1))}
         />
-        <Button title="=" isBlue onPress={() => getResult()} />
+        <Button title="=" isBlue onPress={() => getHasil()} />
       </View>
     </View>
   );

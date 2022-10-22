@@ -1,25 +1,25 @@
 import { useState } from "react";
 import { SafeAreaView, StyleSheet, Switch, Text } from "react-native";
-import { myColors } from "./src/styles/Colors";
+import { WarnaSaya } from "./src/styles/Warna";
 import { ThemeContext } from "./src/context/ThemeContext";
-import MyKeyboard from "./src/components/MyKeyboard";
+import KalkulatorSaya from "./src/components/KalkulatorSaya";
 
 export default function App() {
-  const [theme, setTheme] = useState("light");
+  const [tema, Tema] = useState("light");
   return (
-    <ThemeContext.Provider value={theme}>
+    <ThemeContext.Provider value={tema}>
       <SafeAreaView
         style={
-          theme === "light"
+          tema === "light"
             ? styles.container
             : [styles.container, { backgroundColor: "black" }]
         }
       >
         <Switch
-          value={theme === "dark"}
-          onValueChange={() => setTheme(theme === "light" ? "dark" : "light")}
+          value={tema === "dark"}
+          onValueChange={() => Tema(tema === "light" ? "dark" : "light")}
         />
-        <MyKeyboard />
+        <KalkulatorSaya />
       </SafeAreaView>
     </ThemeContext.Provider>
   );
@@ -28,7 +28,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: myColors.light,
+    backgroundColor: WarnaSaya.light,
     alignItems: "center",
     justifyContent: "flex-start",
   },
