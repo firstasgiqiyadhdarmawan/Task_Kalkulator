@@ -28,9 +28,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: WarnaSaya.light,
+    paddingTop: 30,
     alignItems: "center",
     justifyContent: "flex-start",
-    paddingTop: 30,
+    backgroundColor: WarnaSaya.light,
   },
 });
